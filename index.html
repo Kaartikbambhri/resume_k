@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>resume</title>
+
+    <meta
+      name="description"
+      content="Freebie 64 - Portfolio (Tailwind CSS). Check out more at https://pixelcave.com"
+    />
+    <meta name="author" content="pixelcave" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      href="C:\Users\Lakshit\Downloads\64_Portfolio_Tailwind_CSS_by_pixelcave\64 Portfolio (Tailwind CSS) by pixelcave\img"
+      sizes="any"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="C:\Users\Lakshit\Downloads\64_Portfolio_Tailwind_CSS_by_pixelcave\64 Portfolio (Tailwind CSS) by pixelcave\img"
+      type="image/png"
+    />
+
+    <!-- Inter web font from bunny.net (GDPR compliant) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Play CDN (mainly for development/testing purposes) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+
+    <!-- Tailwind CSS v3 Configuration -->
+    <script>
+      const defaultTheme = tailwind.defaultTheme;
+      const colors = tailwind.colors;
+      const plugin = tailwind.plugin;
+
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", ...defaultTheme.fontFamily.sans],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Alpine.js (x-cloak - https://alpinejs.dev/directives/cloak) -->
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Page Container -->
+    <div
+      x-data="{
+        darkMode: false,
+        toggleDarkMode() {
+          this.darkMode = ! this.darkMode;
+
+          // Toggle dark class on html element
+          if (this.darkMode) {
+            document.body.parentNode.classList.add('dark');
+          } else {
+            document.body.parentNode.classList.remove('dark');
+          }
+        }
+      }"
+      class="min-h-dvh min-w-80 bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
+    >
+      <!-- Page Content -->
+      <main
+        id="page-content"
+        class="mx-auto flex max-w-6xl flex-auto flex-col px-4 pb-4 lg:px-8 lg:pb-8"
+      >
+        <!-- Main Header -->
+        <header
+          id="page-header"
+          class="flex flex-none items-center justify-between py-7"
+        >
+          <div class="flex items-center gap-2">
+            <!-- Logo -->
+            <a
+              href="javascript:void(0)"
+              class="text-2xl font-thin tracking-widest hover:text-purple-600 active:opacity-75 dark:hover:text-purple-400"
+            >
+              Resume
+            </a>
+            <!-- END Logo -->
+
+            <!-- Toggle Dark Mode -->
+            <button
+              x-on:click="toggleDarkMode()"
+              type="button"
+              class="relative inline-flex size-9 items-center justify-center text-zinc-600 hover:opacity-75 dark:text-zinc-400"
+            >
+              <div
+                x-cloak
+                x-show="!darkMode"
+                x-transition:enter="transition ease-out duration-150"
+                x-transition:enter-start="opacity-0 rotate-180"
+                x-transition:enter-end="opacity-100 rotate-0"
+                x-transition:leave="transition ease-in duration-100"
+                x-transition:leave-start="opacity-100 rotate-0"
+                x-transition:leave-end="opacity-0 rotate-180"
+                class="absolute inset-0 flex items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="hi-outline hi-sun inline-block size-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                  />
+                </svg>
+              </div>
+              <div
+                x-cloak
+                x-show="darkMode"
+                x-transition:enter="transition ease-out duration-150"
+                x-transition:enter-start="opacity-0 rotate-180"
+                x-transition:enter-end="opacity-100 rotate-0"
+                x-transition:leave="transition ease-in duration-100"
+                x-transition:leave-start="opacity-100 rotate-0"
+                x-transition:leave-end="opacity-0 rotate-180"
+                class="absolute inset-0 flex items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="hi-outline hi-moon inline-block size-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+                  />
+                </svg>
+              </div>
+            </button>
+            <!-- END Toggle Dark Mode -->
+          </div>
+          <div class="flex items-center gap-4">
+            <!-- Nav -->
+            <nav class="flex items-center gap-6">
+              <a
+                href="#projects"
+                class="text-sm font-medium decoration-purple-600 decoration-2 underline-offset-8 hover:text-black hover:underline dark:decoration-purple-400 dark:hover:text-white"
+              >
+                Certifications
+              </a>
+              <a
+                href="#contact"
+                class="text-sm font-medium decoration-purple-600 decoration-2 underline-offset-8 hover:text-black hover:underline dark:decoration-purple-400 dark:hover:text-white"
+              >
+                Hire me
+              </a>
+            </nav>
+            <!-- END Nav -->
+          </div>
+        </header>
+        <!-- END Main Header -->
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-12">
+          <!-- Photo -->
+          <div class="col-span-1 md:col-span-5">
+            <div class="aspect-h-1 aspect-w-1">
+              <img
+                src="assets/photo.jpg"
+                alt="Photo"
+                class="rounded-xl object-cover"
+              />
+            </div>
+          </div>
+          <!-- END Photo -->
+
+          <!-- Intro -->
+          <div
+            class="relative col-span-1 flex flex-col overflow-hidden rounded-xl bg-zinc-100 p-12 dark:bg-zinc-900 md:col-span-7"
+          >
+            <div
+              aria-hidden="true"
+              class="absolute -left-20 -top-20 size-48 rounded-full bg-yellow-500 blur-2xl"
+            ></div>
+            <div
+              aria-hidden="true"
+              class="absolute -right-10 -top-10 size-64 rounded-full bg-orange-300 blur-3xl"
+            ></div>
+            <div
+              aria-hidden="true"
+              class="absolute inset-0 bg-yellow-100/50 backdrop-blur-md dark:bg-yellow-900/75"
+            ></div>
+            <div class="relative mt-auto">
+              <h1 class="text-4xl font-medium text-black dark:text-white">
+                Hi there, I'm Lakshit!
+              </h1>
+              <h2 class="mt-3 leading-relaxed text-zinc-900 dark:text-zinc-200">
+                A motivated and dedicated college student currently pursuing a Bachelor of Science (BS) in Data Science and Applications at Indian Institute of Information technology, Madras and Bachelor in Computer Applications (BCA) at Galgotias University, Greater Noida Eager to learn and develop new skills, with a strong focus on Statistics and Machine learning. A quick learner with good problem-solving abilities and a keen interest in gaining practical experience. Looking for opportunities to enhance knowledge and contribute effectively in a professional environment.
+              
+              </h2>
+            </div>
+          </div>
+          <!-- END Intro -->
+
+         <!-- Projects -->
+<!-- Projects -->
+<a
+  id="projects"
+  href="certificate.pdf"
+  target="_blank"
+  class="group relative col-span-1 overflow-hidden rounded-xl bg-zinc-100 p-6 hover:bg-zinc-200/75 active:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800/75 dark:active:bg-zinc-800 md:col-span-4"
+>
+  <div
+    class="absolute right-6 top-6 scale-0 opacity-0 transition duration-75 ease-out group-hover:scale-100 group-hover:opacity-100"
+    aria-hidden="true"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="hi-solid hi-arrow-small-right inline-block size-6"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M3.75 12a.75.75 0 0 1 .75-.75h13.19l-5.47-5.47a.75.75 0 0 1 1.06-1.06l6.75 6.75a.75.75 0 0 1 0 1.06l-6.75 6.75a.75.75 0 1 1-1.06-1.06l5.47-5.47H4.5a.75.75 0 0 1-.75-.75Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </div>
+  <h3 class="text-lg font-medium text-zinc-950 dark:text-zinc-50">
+   Data Science and Programming
+  </h3>
+  <h4 class="text-sm text-zinc-600 dark:text-zinc-400">Certificate</h4>
+  
+  <!-- PDF Preview inside iframe -->
+  <div class="aspect-h-3 aspect-w-4 mt-4 transition duration-150 ease-out group-hover:scale-105">
+    <iframe 
+      src="certificate.pdf"
+      width="100%"
+      height="300px"
+      style="border-radius: 10px; border: 1px solid #ddd;"
+    >
+    </iframe>
+  </div>
+</a>
+
+  
+<a
+id="projects"
+href="Entrepreneurship.pdf"
+target="_blank"
+class="group relative col-span-1 overflow-hidden rounded-xl bg-zinc-100 p-6 hover:bg-zinc-200/75 active:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800/75 dark:active:bg-zinc-800 md:col-span-4"
+>
+<div
+  class="absolute right-6 top-6 scale-0 opacity-0 transition duration-75 ease-out group-hover:scale-100 group-hover:opacity-100"
+  aria-hidden="true"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="hi-solid hi-arrow-small-right inline-block size-6"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M3.75 12a.75.75 0 0 1 .75-.75h13.19l-5.47-5.47a.75.75 0 0 1 1.06-1.06l6.75 6.75a.75.75 0 0 1 0 1.06l-6.75 6.75a.75.75 0 1 1-1.06-1.06l5.47-5.47H4.5a.75.75 0 0 1-.75-.75Z"
+      clip-rule="evenodd"
+    />
+  </svg>
+</div>
+<h3 class="text-lg font-medium text-zinc-950 dark:text-zinc-50">
+  Entrepreneurship
+</h3>
+<h4 class="text-sm text-zinc-600 dark:text-zinc-400"> NPTEL Certificate</h4>
+
+<!-- PDF Preview inside iframe -->
+<div class="aspect-h-3 aspect-w-4 mt-4 transition duration-150 ease-out group-hover:scale-105">
+  <iframe 
+    src="Entrepreneurship.pdf"
+    width="100%"
+    height="300px"
+    style="border-radius: 10px; border: 1px solid #ddd;"
+  >
+  </iframe>
+</div>
+</a>
+
+<a
+id="projects"
+href="Completion Lakshit.pdf"
+target="_blank"
+class="group relative col-span-1 overflow-hidden rounded-xl bg-zinc-100 p-6 hover:bg-zinc-200/75 active:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800/75 dark:active:bg-zinc-800 md:col-span-4"
+>
+<div
+  class="absolute right-6 top-6 scale-0 opacity-0 transition duration-75 ease-out group-hover:scale-100 group-hover:opacity-100"
+  aria-hidden="true"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="hi-solid hi-arrow-small-right inline-block size-6"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M3.75 12a.75.75 0 0 1 .75-.75h13.19l-5.47-5.47a.75.75 0 0 1 1.06-1.06l6.75 6.75a.75.75 0 0 1 0 1.06l-6.75 6.75a.75.75 0 1 1-1.06-1.06l5.47-5.47H4.5a.75.75 0 0 1-.75-.75Z"
+      clip-rule="evenodd"
+    />
+  </svg>
+</div>
+<h3 class="text-lg font-medium text-zinc-950 dark:text-zinc-50">
+  Japenese Hiragana
+</h3>
+<h4 class="text-sm text-zinc-600 dark:text-zinc-400"> Minato-jf</h4>
+
+<!-- PDF Preview inside iframe -->
+<div class="aspect-h-3 aspect-w-4 mt-4 transition duration-150 ease-out group-hover:scale-105">
+  <iframe 
+    src="Completion Lakshit.pdf"
+    width="100%"
+    height="300px"
+    style="border-radius: 10px; border: 1px solid #ddd;"
+  >
+  </iframe>
+</div>
+</a>
+
+
+
+
+         <!-- Contact -->
+<div
+id="contact"
+class="relative col-span-1 flex flex-col overflow-hidden rounded-xl bg-zinc-100 px-12 py-20 dark:bg-zinc-900 md:col-span-12"
+>
+<div class="relative mx-auto mt-auto max-w-md">
+  <h2 class="text-4xl font-medium text-black dark:text-white">
+    Get in touch
+  </h2>
+  <h3 class="mt-3 leading-relaxed text-zinc-900 dark:text-zinc-200">
+    Feel free to reach out via email or connect with me on GitHub.
+  </h3>
+  <div class="mt-6 space-y-4">
+    <div>
+      <span class="text-sm font-medium">Email:</span>
+      <span class="text-zinc-500 dark:text-zinc-400">lakshitt428@gmail.com</span>
+    </div>
+    <div>
+      <a
+        href="https://github.com/Willylakshit"
+        class="flex items-center gap-2 text-zinc-400 hover:text-[#333] dark:hover:text-zinc-50"
+        target="_blank"
+      >
+        <svg
+          class="icon-github inline-block size-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+          ></path>
+        </svg>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- END Contact -->
