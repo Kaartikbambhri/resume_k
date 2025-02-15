@@ -7,7 +7,7 @@ This repository serves as a single source of truth for my up-to-date resume. It 
 - **PDF version** of my resume
 
 ## 📂 Files Included
-- `completion certificates` – Ready-to-download resume
+- `Mutiple completition certificates` – Ready-to-download resume
 
 
 ## 🚀 How to Use
@@ -32,4 +32,3 @@ If you have any questions, feel free to reach out:
 If you find this repository useful, consider giving it a ⭐ to show support!
 
 ---
-_Keep your resume updated and ready for new opportunities!_
